@@ -1,0 +1,125 @@
+$<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Heart Disease Prediction System</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>Heart Disease Prediction System</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 p-5">
+        <h2>Project Aim</h2>
+        <p>
+          The main purpose of this project is to predict whether a person has a
+          heart disease or not?
+        </p>
+        <h2>Input and Output</h2>
+        <p>
+          Input: Patient<br />Output: Prediction (Heart Disease Diagnosed / No
+          Heart Disease Diagnosed)
+        </p>
+        <h2>Representation of Input (Patient)</h2>
+        <p>
+          Input (Passenger) is Represented as 4 Input Attributes Input
+          <ul>
+              <li>Input Attribute 01– Age (Patient Age)</li>
+              <li> Input Attribute 02 – trestbps value</li>
+              <li>Attribute 03 – Cholestrol Value</li>
+              <li>Input Attribute 04 – FBS value</li>
+          </ul>
+
+        </p>
+        <h2>
+            Representation of Output</h2>
+        <p> Output (Prediction) is Represented as a Single Output Attribute
+            <br>Output Attribute – Heart Disease
+            <ul>
+                <li>            Possible Value 01 – Yes</li>
+                <li>
+                    Possible Value 02 – No</li>
+            </ul>
+</p>
+        
+      </div>
+
+      <div class="col-md-6 p-5"><h2>Input (Patient)</h2>
+        <div class="page" >
+            <div class="page__demo">   
+              <form action="{{ url_for('predict')}}" class="search" method="POST">
+                <div class="a-field search__field">
+                  
+              <input class="form-control my-3" placeholder="Enter Age" name="age" id="age" onchange="checkSelection(this)" required>
+         
+        
+        
+              <input class="form-control my-3" name="trestbps" id="trestbps" placeholder="Enter trestbps" onchange="checkSelection(this)" required>
+               
+         
+              <input class="form-control my-3" name="chol" id="chol" placeholder="Enter Cholestrol" onchange="checkSelection(this)" required>
+              <input class="form-control my-3" name="fbs" id="fbs" placeholder="Enter FBS (0 or 1)" onchange="checkSelection(this)" required>
+            
+                    <button type="submit" class="btn btn-primary predict_button  ">Predict</button>
+                    
+                  
+                </div></form>
+             </div>
+           </div>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <h5>Age</h5>
+              <h5>trestbps</h5>
+              <h5>Cholestrol</h5>
+              <h5>FBS</h5>
+              <h5>Output</h5>
+            </div>
+            <div class="col-md-6">
+              <h5> {{ age1 }}</h5>
+              <h5>
+                {{ trestbps1 }}</h5>
+              <h5>{{ chol1 }}</h5>
+              <h5>{{ fbs1 }}</h5>
+              <h5>{{ prediction_text1 }}</h5>
+            </div>
+          </div>
+          <p>
+         
+    </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
